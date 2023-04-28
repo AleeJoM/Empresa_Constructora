@@ -147,5 +147,7 @@ namespace Integrador
 			Console.WriteLine("------------------------------------");
 			Console.WriteLine("Ingrese una opcion: ");
 		}
+				
+
 	}
 }
