@@ -19,6 +19,10 @@ namespace Integrador
 			this.mail = mail;
 			this.direccion = direccion;
 		}
+		/*Constructor vacio para poder crear y utilizar los metodos*/
+		public Empresa(){
+			
+		}
 		/*Propiedades*/
 		public string Nombre
 		{
@@ -60,6 +64,10 @@ namespace Integrador
 		/*agregue el metodo imprimir*/
 		public void imprimirEmpresa(){
 			Console.WriteLine("Nombre {0}, Mail {1}, Direccion {2}" + nombre + mail + direccion);
+		}
+		/*lo agregue porque en el enunciado dice que hay que eliminar el obrero del grupo y la empresa, deberiamos tener un arraylist de obreros en empresa tambien?*/
+		public void eliminarObrero(){
+			
 		}
 	}
 }

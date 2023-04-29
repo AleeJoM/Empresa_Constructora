@@ -21,6 +21,10 @@ namespace Integrador
 			this.cargo = cargo;
 			this.nro_grupo = nro_grupo;
 		}
+		/*Constructor vacio, para poder utilizar obrero*/
+		public Obrero(){
+			
+		}
 		/*Propiedades*/
 		public string Nombre
 		{
@@ -52,5 +56,18 @@ namespace Integrador
 			set{nro_grupo = value;}
 			get{return nro_grupo;}
 		}
+		/*Metodos*/
+		/*Agrego el imprimir*/
+		public void imprimirObrero(){
+			    Console.WriteLine("  Datos de los obreros: " +
+			                      "\n  Nombre: {0} "+
+			                      "\n  Apellido: {1} " +
+			                      "\n  Dni: {2} " +
+			                      "\n  Legajo: {3} "+
+			                      "\n  Cargo : {4} " +
+			                      "\n  Numero de grupo {5} " +
+								  nombre, dni, dni, legajo, cargo, nro_grupo);
+		}
+		
 	}
 }

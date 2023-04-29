@@ -15,6 +15,10 @@ namespace Integrador
 			this.cod_obra = cod_obra;
 			this.nro_grupo = nro_grupo;
 		}
+		/*Constructor vacio para poder iniciar un nuevo objeto y utilizar los metodos*/
+		public Grupo(){
+			
+		}
 		/*Propiedades*/
 		public int Cod_obra
 		{
@@ -34,6 +38,10 @@ namespace Integrador
 		public void agregarObrero(Obrero obre1)
 		{
 			obreros.Add(obre1);
+		}
+		public void eliminarObrero(int obrero)/*se lo agregue por enunciado dice que hay que eliminar un obrero de la clase grupo*/
+		{
+			obreros.Remove(obrero);
 		}
 	}
 }
