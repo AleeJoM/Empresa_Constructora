@@ -60,10 +60,15 @@ namespace Integrador
 		public void agregarEmpresa(Empresa empresa)
 		{
 			listadeEmpresas.Add(empresa);
+			
 		}
 		/*agregue el metodo imprimir*/
 		public void imprimirEmpresa(){
-			Console.WriteLine("Nombre {0}, Mail {1}, Direccion {2}" + nombre + mail + direccion);
+			Console.WriteLine("  Datos de la Empresa: " +
+			                      "\n  Nombre: {0} "+
+			                      "\n  Mail: {1} " +
+			                      "\n  Direccion: {2} " ,
+			                      nombre , mail , direccion);
 		}
 		/*lo agregue porque en el enunciado dice que hay que eliminar el obrero del grupo y la empresa, deberiamos tener un arraylist de obreros en empresa tambien?*/
 		public void eliminarObrero(){
