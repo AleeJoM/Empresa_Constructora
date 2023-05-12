@@ -9,17 +9,21 @@ namespace Integrador
 		private string nombre;
 		private string mail;
 		private int cuit;
-		private ArrayList listadobras = new ArrayList();
-		private ArrayList listadgrupos = new ArrayList();
-		private ArrayList listadobreros = new ArrayList();
-		private ArrayList listadempresas = new ArrayList();
+		private ArrayList listadobras;
+		private ArrayList listadgrupos;
+		private ArrayList listadobreros;
+		private ArrayList listadempresas;
 		/*Constructor*/
 		public Empresa(string nombre, string mail, int cuit)
 		{
 			this.nombre = nombre;
 			this.mail = mail;
 			this.cuit = cuit;
-		
+			listadobras = new ArrayList();
+			listadgrupos = new ArrayList();
+			listadobreros = new ArrayList();
+			listadempresas = new ArrayList();
+			
 		}
 		/*Constructor vacio*/
 		public Empresa()
@@ -88,7 +92,7 @@ namespace Integrador
 		public int cantidadEmpresas()
 		{
 			return listadempresas.Count;
-		}	
+		}
 		public int cantidadObra()
 		{
 			return listadobras.Count;
@@ -117,36 +121,44 @@ namespace Integrador
 		{
 			return listadobreros.Contains(listadobreros);
 		}
-		public void verEmpresa()
-		{
-			foreach(Empresa e in Listadempresas){
-				Console.WriteLine(e);
-			}
+
+		public Empresa verEmpresa(int i){
+			return (Empresa) this.listadempresas[i];
 		}
-//		public Empresa verEmpresa(int i)   ACA ME TIRA UN ERROR DE QUE No se puede convertir implícitamente el tipo 'object' en 'Integrador.Empresa'. 
-//                              		   Ya existe una conversión explícita (compruebe si le falta una conversión) (CS0266)
+		public Empresa verObra(int i){
+			return (Empresa) this.listadobras[i];
+		}
+		public Empresa verGrupo(int i){
+			return (Empresa) this.listadgrupos[i];
+		}
+		public Empresa verObrero(int i){
+			return (Empresa) this.listadobreros[i];
+		}
+//		public void verEmpresa()
 //		{
-//			return listadempresas[i];
+//			foreach(Empresa e in Listadempresas){
+//				Console.WriteLine(e);
+//			}
+//		}	
+//		public void verObras()
+//		{
+//			foreach(Empresa e in Listadobras){
+//				Console.WriteLine(e);
+//			}
 //		}
-		public void verObras()
-		{
-			foreach(Empresa e in Listadobras){
-				Console.WriteLine(e);
-			}
-		}
-		public void verGrupo()
-		{
-			foreach(Empresa e in Listadgrupos){
-				Console.WriteLine(e);
-			}
-		}
-		public void verObrero()
-		{
-			foreach(Empresa e in Listadobreros){
-				Console.WriteLine(e);
-			}
-			
-		}
+//		public void verGrupo()
+//		{
+//			foreach(Empresa e in Listadgrupos){
+//				Console.WriteLine(e);
+//			}
+//		}
+//		public void verObrero()
+//		{
+//			foreach(Empresa e in Listadobreros){
+//				Console.WriteLine(e);
+//			}
+//			
+//		}
 		public ArrayList todaslasEmpresas()
 		{
 			return listadempresas;

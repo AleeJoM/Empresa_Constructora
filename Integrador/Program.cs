@@ -46,7 +46,7 @@ namespace Integrador
 						Console.WriteLine(" 3 - Modificar estado de avance de obra");
 						Console.WriteLine("------------------------------------");
 						Console.WriteLine("");
-//						mostrarAbog(estudio1);
+						modificarAvance(opcion,empresa);
 						Console.WriteLine("");
 						Console.WriteLine("------------------------------------");
 						Console.WriteLine("Presione ENTER para volver a menú");
@@ -111,7 +111,7 @@ namespace Integrador
 						Console.WriteLine(" 8 - Lista de obras finalizadas");
 						Console.WriteLine("------------------------------------");
 						Console.WriteLine("");
-//						listadoExpedientePorMes(estudio1);
+						listadObrasFin(opcion,empresa);
 						Console.WriteLine("");
 						Console.WriteLine("------------------------------------");
 						Console.WriteLine("Presione ENTER para volver a menú");
@@ -194,8 +194,29 @@ namespace Integrador
 			
 			
 		}
-		public static void modificarAvance()
+		public static void modificarAvance(int opcion, Empresa empresa)
 		{
+			if(empresa.Listadobras.Count != 0 ){
+				int codigodeobra;
+				Console.WriteLine("Ingrese codigo de obra a modificar: ");
+				codigodeobra = int.Parse(Console.ReadLine());
+				foreach(Obra obramod in empresa.Listadobras){
+					if(obramod.Codigodobra == codigodeobra){
+						double estado;
+						Console.WriteLine("Ingrese el nuevo estado de obra: ");
+						estado = double.Parse(Console.ReadLine());
+						obramod.Estado = estado;
+						Console.WriteLine("Estado modificado exitosamente!");
+						break;
+					}
+				}
+			}
+			
+			else {
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("Ninguna obra para modificar!");
+				Console.ForegroundColor = ConsoleColor.White;
+			}
 		}
 		public static void listadObras(int opcion, Empresa empresa)
 		{
@@ -203,16 +224,16 @@ namespace Integrador
 			if(obras.Count > 0){
 
 				foreach(Obra ele in obras){
-				Console.WriteLine("Los datos de las obras son: ");
-				Console.WriteLine("Nombre del propietario: " + ele.Nombreprop);
-				Console.WriteLine("DNI del propietario: " + ele.Dni);
-				Console.WriteLine("Tipo de obra: " + ele.Tipodobra);
-				Console.WriteLine("Costo: " + ele.Costo);
-				Console.WriteLine("Codigo de la obra: " + ele.Codigodobra);
-				Console.WriteLine("Dias de ejecucion: " + ele.Diasdejec);
-				Console.WriteLine("Estado de la obra: " + ele.Estado);
-				Console.WriteLine("Numero de grupo de obreros: " + ele.Nrodgrupo);
-				
+					Console.WriteLine("Los datos de las obras son: ");
+					Console.WriteLine("Nombre del propietario: " + ele.Nombreprop);
+					Console.WriteLine("DNI del propietario: " + ele.Dni);
+					Console.WriteLine("Tipo de obra: " + ele.Tipodobra);
+					Console.WriteLine("Costo: " + ele.Costo);
+					Console.WriteLine("Codigo de la obra: " + ele.Codigodobra);
+					Console.WriteLine("Dias de ejecucion: " + ele.Diasdejec);
+					Console.WriteLine("Estado de la obra: " + ele.Estado);
+					Console.WriteLine("Numero de grupo de obreros: " + ele.Nrodgrupo);
+					
 				}
 			}else{
 				Console.WriteLine("No hay obras ingresadas!");
@@ -266,10 +287,10 @@ namespace Integrador
 					}else{
 						Console.WriteLine("1 O MÁS DATOS INCORRECTOS");
 					}
-					}
-					if(esta){
-						Console.WriteLine("Obrero Eliminado exitosamente!");
-						Console.ReadKey();
+				}
+				if(esta){
+					Console.WriteLine("Obrero Eliminado exitosamente!");
+					Console.ReadKey();
 				}
 			}else{
 				Console.WriteLine("No se encontro obrero para eliminar");
@@ -281,14 +302,14 @@ namespace Integrador
 			if(obreros.Count > 0){
 
 				foreach(Obrero ele in obreros){
-				Console.WriteLine("Los datos de los obreros son: ");
-				Console.WriteLine("Nombre: " + ele.Nombre);
-				Console.WriteLine("Apellido: " + ele.Apellido);
-				Console.WriteLine("DNI: " + ele.Dni);
-				Console.WriteLine("Legajo: " + ele.Legajo);
-				Console.WriteLine("Cargo: " + ele.Cargo);
-				Console.WriteLine("Numero de grupo: " + ele.Nrodgrupo);
-				
+					Console.WriteLine("Los datos de los obreros son: ");
+					Console.WriteLine("Nombre: " + ele.Nombre);
+					Console.WriteLine("Apellido: " + ele.Apellido);
+					Console.WriteLine("DNI: " + ele.Dni);
+					Console.WriteLine("Legajo: " + ele.Legajo);
+					Console.WriteLine("Cargo: " + ele.Cargo);
+					Console.WriteLine("Numero de grupo: " + ele.Nrodgrupo);
+					
 				}
 			}else{
 				Console.WriteLine("No hay obreros ingresados!");
@@ -297,9 +318,22 @@ namespace Integrador
 
 		}
 		
-		public static void listadObrasFin()
+		public static void listadObrasFin(int opcion, Empresa empresa)
 		{
-		
+			if(empresa.Listadobras.Count != 0){
+				double finobra = 100;
+				foreach(Obra obrafin in empresa.Listadobras){
+					if(obrafin.Estado == finobra){
+						Console.WriteLine("las obras finalizadas son: " + obrafin.Nombreprop);
+					}
+				}	
+			}
+			else {
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("Ninguna obra sin finalizar!");
+				Console.ForegroundColor = ConsoleColor.White;
+			}
+			
 		}
 		
 		
