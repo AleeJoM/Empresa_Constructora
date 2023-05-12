@@ -189,7 +189,7 @@ namespace Integrador
 			estado = double.Parse(Console.ReadLine());
 			Console.Write("Ingrese el Numero de grupo: ");
 			nrodgrupo = int.Parse(Console.ReadLine());
-			Obra nuevaobra = new Obra();
+			Obra nuevaobra = new Obra(nombreprop,dniprop,tipodobra,costo,codigodobra,diadejec,estado,nrodgrupo);
 			empresa.agregarObra(nuevaobra);
 			
 			
@@ -222,7 +222,7 @@ namespace Integrador
 			Console.Write("Ingrese Numero de grupo: ");
 			nrodgrupo = int.Parse(Console.ReadLine());
 			
-			Obrero nuevoObrero = new Obrero ();
+			Obrero nuevoObrero = new Obrero (nombre,apellido,dni,legajo,cargo,nrodgrupo);
 			empresa.agregarObrero(nuevoObrero);
 			grupo.agregarObrero(nuevoObrero);
 			
@@ -257,27 +257,24 @@ namespace Integrador
 			
 		}
 		public static void listadObreros(int opcion, Empresa empresa, Grupo grupo){
-//	FORMA 1
-//			ArrayList obreros = empresa.todoslosObreros();
-//			if(obreros.Count > 0){
-//
-//				foreach(Obrero ele in obreros){
-//				Console.WriteLine("nombre: " + ele.Nombre);
-//				Console.WriteLine("apellido: " + ele.Apellido);
-//				}
-//			}else{
-//				Console.WriteLine("No hay obreros ingresados!");
-//			}
-//			Console.ReadKey();
-//
-			// FORMA 2
-//			if(empresa.cantidadObrero() != 0 && grupo.cantidadObrero() != 0){
-//				Console.WriteLine("lista de obreros: "+ empresa.todoslosObreros());
-//
-//
-//			}else {
-//				Console.WriteLine("No hay obreros ingresados!");
-//			}
+			ArrayList obreros = empresa.todoslosObreros();
+			if(obreros.Count > 0){
+
+				foreach(Obrero ele in obreros){
+				Console.WriteLine("Los datos de los obreros son: ");
+				Console.WriteLine("Nombre: " + ele.Nombre);
+				Console.WriteLine("Apellido: " + ele.Apellido);
+				Console.WriteLine("DNI: " + ele.Dni);
+				Console.WriteLine("Legajo: " + ele.Legajo);
+				Console.WriteLine("Cargo: " + ele.Cargo);
+				Console.WriteLine("Numero de grupo: " + ele.Nrodgrupo);
+				
+				}
+			}else{
+				Console.WriteLine("No hay obreros ingresados!");
+			}
+			Console.ReadKey();
+
 		}
 		
 		public static void listadObrasFin()
