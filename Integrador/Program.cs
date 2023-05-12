@@ -59,7 +59,7 @@ namespace Integrador
 						Console.WriteLine(" 4 - Listado de obras");
 						Console.WriteLine("------------------------------------");
 						Console.WriteLine("");
-//						agregarExpediente(estudio1);
+						listadObras(opcion,empresa);
 						Console.WriteLine("");
 						Console.WriteLine("------------------------------------");
 						Console.WriteLine("Presione ENTER para volver a menú");
@@ -159,8 +159,8 @@ namespace Integrador
 			mail = Console.ReadLine();
 			Console.Write("Ingrese CUIT de la empresa: ");
 			cuit = int.Parse(Console.ReadLine());
-			
-			empresa.agregarEmpresa(empresa);
+			Empresa nuevaEmpresa = new Empresa(nombre,mail,cuit);
+			empresa.agregarEmpresa(nuevaEmpresa);
 		}
 		public static void agregarObra(int opcion, Empresa empresa)
 		{
@@ -197,8 +197,27 @@ namespace Integrador
 		public static void modificarAvance()
 		{
 		}
-		public static void listadObras()
+		public static void listadObras(int opcion, Empresa empresa)
 		{
+			ArrayList obras = empresa.todaslasObras();
+			if(obras.Count > 0){
+
+				foreach(Obra ele in obras){
+				Console.WriteLine("Los datos de las obras son: ");
+				Console.WriteLine("Nombre del propietario: " + ele.Nombreprop);
+				Console.WriteLine("DNI del propietario: " + ele.Dni);
+				Console.WriteLine("Tipo de obra: " + ele.Tipodobra);
+				Console.WriteLine("Costo: " + ele.Costo);
+				Console.WriteLine("Codigo de la obra: " + ele.Codigodobra);
+				Console.WriteLine("Dias de ejecucion: " + ele.Diasdejec);
+				Console.WriteLine("Estado de la obra: " + ele.Estado);
+				Console.WriteLine("Numero de grupo de obreros: " + ele.Nrodgrupo);
+				
+				}
+			}else{
+				Console.WriteLine("No hay obras ingresadas!");
+			}
+			Console.ReadKey();
 		}
 		public static void contratarObrero(int opcion, Empresa empresa, Grupo grupo)
 		{
@@ -244,7 +263,8 @@ namespace Integrador
 						esta =true;
 						empresa.elimarObrero(obreroEliminar);
 						grupo.elimarObrero(obreroEliminar);
-						break;
+					}else{
+						Console.WriteLine("1 O MÁS DATOS INCORRECTOS");
 					}
 					}
 					if(esta){
@@ -279,6 +299,7 @@ namespace Integrador
 		
 		public static void listadObrasFin()
 		{
+		
 		}
 		
 		

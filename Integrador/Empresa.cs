@@ -14,11 +14,12 @@ namespace Integrador
 		private ArrayList listadobreros = new ArrayList();
 		private ArrayList listadempresas = new ArrayList();
 		/*Constructor*/
-		public Empresa(string nombre, int cuit, string mail)
+		public Empresa(string nombre, string mail, int cuit)
 		{
 			this.nombre = nombre;
-			this.cuit = cuit;
 			this.mail = mail;
+			this.cuit = cuit;
+		
 		}
 		/*Constructor vacio*/
 		public Empresa()

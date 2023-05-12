@@ -14,7 +14,7 @@ namespace Integrador
 		private int nrodgrupo;
 		private decimal costo;
 		/*Constructor*/
-		public Obra(string nombreprop, int dniprop, int codigodobra, string tipodobra, int diasdejec, double estado, int nrodgrupo, decimal costo)
+		public Obra(string nombreprop, int dniprop, string tipodobra,decimal costo, int codigodobra,  int diasdejec,double estado,  int nrodgrupo)
 		{
 			this.nombreprop = nombreprop;
 			this.dniprop = dniprop;
