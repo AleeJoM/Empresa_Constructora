@@ -100,21 +100,21 @@ namespace Integrador
 		{
 			return listadobreros.Count;
 		}
-		public void existeEmpresa()
+		public bool existeEmpresa()
 		{
-			listadempresas.Contains(listadempresas);
+			return listadempresas.Contains(listadempresas);
 		}
-		public void existeObra()
+		public bool existeObra()
 		{
-			listadobras.Contains(listadobras);
+			return listadobras.Contains(listadobras);
 		}
-		public void existeGrupo()
+		public bool existeGrupo()
 		{
-			listadgrupos.Contains(listadgrupos);
+			return listadgrupos.Contains(listadgrupos);
 		}
-		public void existeObrero()
+		public bool existeObrero()
 		{
-			listadobreros.Contains(listadobreros);
+			return listadobreros.Contains(listadobreros);
 		}
 		public void verEmpresa()
 		{
@@ -122,6 +122,11 @@ namespace Integrador
 				Console.WriteLine(e);
 			}
 		}
+//		public Empresa verEmpresa(int i)   ACA ME TIRA UN ERROR DE QUE No se puede convertir implícitamente el tipo 'object' en 'Integrador.Empresa'. 
+//                              		   Ya existe una conversión explícita (compruebe si le falta una conversión) (CS0266)
+//		{
+//			return listadempresas[i];
+//		}
 		public void verObras()
 		{
 			foreach(Empresa e in Listadobras){
