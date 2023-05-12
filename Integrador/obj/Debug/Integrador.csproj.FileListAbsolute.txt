@@ -4,3 +4,9 @@ C:\Users\Admin\Desktop\Facu-4toC-(1erC 2023)\Algoritmos y Progra\Proyecto_Integr
 C:\Users\Admin\Desktop\Facu-4toC-(1erC 2023)\Algoritmos y Progra\Proyecto_Integrador\Integrador\obj\Debug\Integrador.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\Facu-4toC-(1erC 2023)\Algoritmos y Progra\Proyecto_Integrador\Integrador\obj\Debug\Integrador.exe
 C:\Users\Admin\Desktop\Facu-4toC-(1erC 2023)\Algoritmos y Progra\Proyecto_Integrador\Integrador\obj\Debug\Integrador.pdb
+C:\Users\Giuliano\Desktop\Integrador\Integrador\bin\Debug\Integrador.exe.config
+C:\Users\Giuliano\Desktop\Integrador\Integrador\bin\Debug\Integrador.exe
+C:\Users\Giuliano\Desktop\Integrador\Integrador\bin\Debug\Integrador.pdb
+C:\Users\Giuliano\Desktop\Integrador\Integrador\obj\Debug\Integrador.csprojResolveAssemblyReference.cache
+C:\Users\Giuliano\Desktop\Integrador\Integrador\obj\Debug\Integrador.exe
+C:\Users\Giuliano\Desktop\Integrador\Integrador\obj\Debug\Integrador.pdb

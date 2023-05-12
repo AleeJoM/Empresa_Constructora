@@ -5,67 +5,70 @@ namespace Integrador
 	public class Obra
 	{
 		/*Atributos*/
-		private string nombre;
-		private int dni;
-		private int cod_obra;
-		private string tipo_obra;
-		private int dias_ejec;
+		private string nombreprop;
+		private int dniprop;
+		private int codigodobra;
+		private string tipodobra;
+		private int diasdejec;
 		private double estado;
-		private int nro_grupo;
-		private int costo;
+		private int nrodgrupo;
+		private decimal costo;
 		/*Constructor*/
-		public Obra(string nombre, int dni, int cod_obra, string tipo_obra, int dias_ejec, double estado, int nro_grupo, int costo)
+		public Obra(string nombreprop, int dniprop, int codigodobra, string tipodobra, int diasdejec, double estado, int nrodgrupo, decimal costo)
 		{
-			this.nombre = nombre;
-			this.dni = dni;
-			this.cod_obra = cod_obra;
-			this.tipo_obra = tipo_obra;
-			this.dias_ejec = dias_ejec;
+			this.nombreprop = nombreprop;
+			this.dniprop = dniprop;
+			this.codigodobra = codigodobra;
+			this.tipodobra = tipodobra;
+			this.diasdejec = diasdejec;
 			this.estado = estado;
-			this.nro_grupo = nro_grupo;
+			this.nrodgrupo = nrodgrupo;
 			this.costo = costo;
 		}
+		/*constructor vacio*/
+		public Obra(){
+			
+		}
 		/*Propiedades*/
-		public string Nombre
+		public string Nombreprop
 		{
-			set{nombre = value;}
-			get{return nombre;}
+			set{nombreprop = value;}
+			get{return nombreprop;}
 		}
 		public int Dni
 		{
-			set{dni = value;}
-			get{return dni;}
+			set{dniprop = value;}
+			get{return dniprop;}
 		}
-		public int Cod_obra
+		public int Codigodobra
 		{
-			set{cod_obra = value;}
-			get{return cod_obra;}
+			set{codigodobra = value;}
+			get{return codigodobra;}
 		}
-		public string Tipo_obra
+		public string Tipodobra
 		{
-			set{tipo_obra = value;}
-			get{return tipo_obra;}
+			set{tipodobra = value;}
+			get{return tipodobra;}
 		}
-		public int Dias_ejec
+		public int Diasdejec
 		{
-			set{dias_ejec = value;}
-			get{return dias_ejec;}
+			set{diasdejec = value;}
+			get{return diasdejec;}
 		}
 		public double Estado
 		{
 			set{estado = value;}
 			get{return estado;}
 		}
-		public int Nro_grupo
+		public int Nrodgrupo
 		{
-			set{nro_grupo = value;}
-			get{return nro_grupo;}
+			set{nrodgrupo = value;}
+			get{return nrodgrupo;}
 		}
-		public int Costo
+		public decimal Costo
 		{
 			set{costo = value;}
 			get{return costo;}
 		}
-		/*Métodos*/
 	}
 }

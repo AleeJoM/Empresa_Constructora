@@ -10,16 +10,20 @@ namespace Integrador
 		private int dni;
 		private int legajo;
 		private string cargo;
-		private int nro_grupo;
+		private int nrodgrupo;
 		/*Constructor*/
-		public Obrero(string nombre, string apellido, int dni, int legajo, string cargo, int nro_grupo)
+		public Obrero(string nombre, string apellido, int dni, int legajo, string cargo, int nrodgrupo)
 		{
 			this.nombre = nombre;
 			this.apellido = apellido;
 			this.dni = dni;
 			this.legajo = legajo;
 			this.cargo = cargo;
-			this.nro_grupo = nro_grupo;
+			this.nrodgrupo = nrodgrupo;
+		}
+		/*constructor vacio*/
+		public Obrero(){
+			
 		}
 		/*Propiedades*/
 		public string Nombre
@@ -47,10 +51,10 @@ namespace Integrador
 			set{cargo = value;}
 			get{return cargo;}
 		}
-		public int Nro_grupo
+		public int Nrodgrupo
 		{
-			set{nro_grupo = value;}
-			get{return nro_grupo;}
+			set{nrodgrupo = value;}
+			get{return nrodgrupo;}
 		}
 	}
 }

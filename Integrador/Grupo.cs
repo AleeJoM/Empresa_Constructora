@@ -6,34 +6,61 @@ namespace Integrador
 	public class Grupo
 	{
 		/*Atributos*/
-		private int cod_obra;
-		private int nro_grupo;
-		private ArrayList obreros = new ArrayList();
+		private int codigodobra;
+		private int nrodgrupo;
+		private ArrayList listadobreros = new ArrayList();
 		/*Constructor*/
-		public Grupo(int cod_obra, int nro_grupo)
+		public Grupo(int codigodobra, int nrodgrupo)
 		{
-			this.cod_obra = cod_obra;
-			this.nro_grupo = nro_grupo;
+			this.codigodobra = codigodobra;
+			this.nrodgrupo = nrodgrupo;
+		}
+		/*constructor vacio*/
+		public Grupo(){
+			
 		}
 		/*Propiedades*/
-		public int Cod_obra
+		public int Codigodobra
 		{
-			set{cod_obra = value;}
-			get{return cod_obra;}
+			set{codigodobra = value;}
+			get{return codigodobra;}
 		}
-		public int Nro_grupo
+		public int Nrodgrupo
 		{
-			set{nro_grupo = value;}
-			get{return nro_grupo;}
+			set{nrodgrupo = value;}
+			get{return nrodgrupo;}
 		}
-		public ArrayList Obreros
+		public ArrayList Listadobreros
 		{
-			get{return obreros;}
+			get{return listadobreros;}
 		}
 		/*Métodos*/
-		public void agregarObrero(Obrero obre1)
+		public void agregarObrero(Obrero obrero)
 		{
-			obreros.Add(obre1);
+			listadobreros.Add(obrero);
+		}
+		public void elimarObrero(Obrero obrero)
+		{
+			listadobreros.Remove(obrero);
+		}
+		public int cantidadObrero()
+		{
+			return listadobreros.Count;
+		}
+		public void existeObrero()
+		{
+			listadobreros.Contains(listadobreros);
+		}
+		public void verObrero()
+		{
+			foreach(Empresa e in Listadobreros){
+				Console.WriteLine(e);
+			}
+			
+		}
+		public ArrayList todoslosObreros()
+		{
+			return listadobreros;
 		}
 	}
 }
