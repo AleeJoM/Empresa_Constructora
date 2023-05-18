@@ -8,7 +8,7 @@ namespace Integrador
 		public static void Main(string[] args)
 		{
 			Empresa empresa = new Empresa("LA BANDEJA", "LABANDEJA@GMAIL.COM", 2023);
-			Grupo grupo = new Grupo();
+			Grupo grupo = new Grupo(0, 0);
 			bool continuar = true;
 			int opcion;
 			while (continuar) {

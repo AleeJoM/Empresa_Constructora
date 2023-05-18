@@ -10,6 +10,9 @@ namespace Integrador
 		private int nrodgrupo;
 		private ArrayList listadobreros; 
 		/*Constructor*/
+		public Grupo(){
+			
+		}
 		public Grupo(int codigodobra, int nrodgrupo)
 		{
 			this.codigodobra = codigodobra;
@@ -17,9 +20,7 @@ namespace Integrador
 			listadobreros = new ArrayList();
 		}
 		/*constructor vacio*/
-		public Grupo(){
-			
-		}
+
 		/*Propiedades*/
 		public int Codigodobra
 		{
