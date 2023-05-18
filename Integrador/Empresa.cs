@@ -134,31 +134,6 @@ namespace Integrador
 		public Empresa verObrero(int i){
 			return (Empresa) this.listadobreros[i];
 		}
-//		public void verEmpresa()
-//		{
-//			foreach(Empresa e in Listadempresas){
-//				Console.WriteLine(e);
-//			}
-//		}	
-//		public void verObras()
-//		{
-//			foreach(Empresa e in Listadobras){
-//				Console.WriteLine(e);
-//			}
-//		}
-//		public void verGrupo()
-//		{
-//			foreach(Empresa e in Listadgrupos){
-//				Console.WriteLine(e);
-//			}
-//		}
-//		public void verObrero()
-//		{
-//			foreach(Empresa e in Listadobreros){
-//				Console.WriteLine(e);
-//			}
-//			
-//		}
 		public ArrayList todaslasEmpresas()
 		{
 			return listadempresas;

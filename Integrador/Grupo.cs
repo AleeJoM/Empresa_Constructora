@@ -52,11 +52,9 @@ namespace Integrador
 		{
 			listadobreros.Contains(listadobreros);
 		}
-		public void verObrero()
+		public Grupo verObrero(int i)
 		{
-			foreach(Empresa e in Listadobreros){
-				Console.WriteLine(e);
-			}
+		   return (Grupo) this.listadobreros[i];
 			
 		}
 		public ArrayList todoslosObreros()
