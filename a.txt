@@ -1,0 +1,15 @@
+Quiero que realices una evaluacion, dandome diferentes ejercicios tanto de pseudocodigo, como de teoria de conceptos generales. Modalidad multiple choice.
+Ejercicios con sucesión de valores - Promedio, minimo elemento, máximo.
+Palindromos - Anagramas
+Vectores
+POO
+Modelado de clases
+Ejercicios con Pseudocodigo
+Ejercicios con lógica
+SQL - scripts - selects
+Lógica de programación.
+negocio
+
+ahora referido al negocio, tanto pseudocodigo y dame las opciones, y preguntas de conceptos generales con varias opciones
+
+hazme preguntas multiple choice con conceptos generales de POO

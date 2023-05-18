@@ -136,27 +136,6 @@ namespace Integrador
 			Console.WriteLine("------------------------------------");
 			Console.WriteLine("Ingrese una opcion: ");
 		}
-//		public static void nuevaEmpresa(Empresa e1)
-//		{
-//			if(e1.cantidadEmpresa() < 1)
-//			{
-//				Console.Write("Ingrese el nombre de la empresa: ");
-//				string nombreEmpresa = Console.ReadLine();
-//				Console.Write("Ingrese el mail de la empresa: ");
-//				string mailEmpresa = Console.ReadLine();
-//				Console.Write("Ingrese la dirección de la empresa: ");
-//				string direccion = Console.ReadLine();
-//				Empresa emp1 = new Empresa(nombreEmpresa, mailEmpresa, direccion);
-//				e1.agregarEmpresa(emp1);
-//				Console.ForegroundColor = ConsoleColor.Green;
-//				Console.WriteLine("Empresa creada Exitosamente!"+"\n");
-//				Console.ForegroundColor = ConsoleColor.White;
-//			}
-//			else
-//			{
-//				Console.WriteLine("Cupo de empresas excedido");
-//			}
-//		}
 		public static void agregarObra(Empresa e1)
 		{
 			if(e1.cantidadObra() <= 1)
@@ -177,7 +156,9 @@ namespace Integrador
 				int nrodegrupo = int.Parse(Console.ReadLine());
 				Obra ob1 = new Obra(nombrePropietario, dniPropietario, tipodeobra, costo, codigodeobra, diasdejecucion, nrodegrupo);
 				e1.agregarObraEMP(ob1);
+				Console.ForegroundColor = ConsoleColor.Green;
 				Console.WriteLine("Has creado exitosamente la obra");
+				Console.ForegroundColor = ConsoleColor.White;
 			}
 			else
 			{

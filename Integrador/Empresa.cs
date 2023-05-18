@@ -20,12 +20,7 @@ namespace Integrador
 			this.direccion = direccion;
 			listaObras  = new ArrayList();
 			listaGrupos  = new ArrayList();
-//			listaEmpresas  = new ArrayList();
 		}
-//		/*Constructor vacio para poder crear y utilizar los metodos*/
-//		public Empresa()
-//		{			
-//		}
 		/*Propiedades*/
 		public string Nombre
 		{
@@ -50,10 +45,6 @@ namespace Integrador
 		{
 			get{return listaGrupos;}
 		}
-//		public ArrayList ListaEmpresas
-//		{
-//			get{return listaEmpresas;}
-//		}
 		/*Métodos*/
 		public void agregarObraEMP(Obra ob1)
 		{
@@ -63,10 +54,6 @@ namespace Integrador
 		{
 			listaGrupos.Add(g1);
 		}
-//		public void agregarEmpresa(Empresa e1)
-//		{
-//			listaEmpresas.Add(e1);
-//		}
 		public void eliminarObra(int ob1)
 		{
 			listaObras.Remove(ob1);
@@ -75,10 +62,6 @@ namespace Integrador
 		{
 			listaGrupos.Remove(g1);
 		}
-//		public void eliminarEmpresa(int e1)
-//		{
-//			listaEmpresas.Remove(e1);
-//		}
 		public int cantidadObra()
 		{ 
 			return listaObras.Count;
@@ -87,10 +70,6 @@ namespace Integrador
 		{ 
 			return listaGrupos.Count;
 		}
-//		public int cantidadEmpresa()
-//		{ 
-//			return listaEmpresas.Count;
-//		}
 		public bool existeObra(Obra ob1)
 		{
 			return listaObras.Contains(ob1);
@@ -99,10 +78,6 @@ namespace Integrador
 		{
 			return listaGrupos.Contains(g1);
 		}
-//		public bool existeEmpresa(Empresa e1)
-//		{
-//			return listaEmpresas.Contains(e1);
-//		}
 		public Obra verObra(int i)
 		{ 
 			return (Obra)listaObras[i];
@@ -111,10 +86,6 @@ namespace Integrador
 		{ 
 			return (Grupo)listaGrupos[i];
 		}
-//		public Empresa verEmpresa(int i)
-//		{ 
-//			return (Empresa)listaEmpresas[i];
-//		}
 		public ArrayList todasObras()
 		{
 			return listaObras;
@@ -122,10 +93,6 @@ namespace Integrador
 		public ArrayList todosGrupos()
 		{
 			return listaGrupos;
-		}	
-//		public ArrayList todasEmpresas()
-//		{
-//			return listaEmpresas;
-//		}
+		}
 	}
 }
