@@ -11,10 +11,10 @@ namespace Integrador
 		private string tipo_obra;
 		private int dias_ejec;
 		private int estado;
-		private int nro_grupo;
 		private double costo;
+		private int nro_grupo;
 		/*Constructor*/
-		public Obra(string nombre, int dni, int cod_obra, string tipo_obra, int dias_ejec, int estado, int nro_grupo, double costo)
+		public Obra(string nombre, int dni, int cod_obra, string tipo_obra, int dias_ejec, int estado, double costo, int nro_grupo)
 		{
 			this.nombre = nombre;
 			this.dni = dni;
@@ -22,22 +22,19 @@ namespace Integrador
 			this.tipo_obra = tipo_obra;
 			this.dias_ejec = dias_ejec;
 			this.estado = estado;
-			this.nro_grupo = nro_grupo;
 			this.costo = costo;
+			this.nro_grupo = nro_grupo;
 		}
 		/*Constructor para agregar obra, sin estado*/
-		public Obra(string nombre, int dni,string tipo_obra,double costo, int cod_obra,int dias_ejec, int nro_grupo)
+		public Obra(string nombre, int dni, int cod_obra, string tipo_obra, int dias_ejec, double costo, int nro_grupo)
 		{
 			this.nombre = nombre;
 			this.dni = dni;
 			this.cod_obra = cod_obra;
 			this.tipo_obra = tipo_obra;
 			this.dias_ejec = dias_ejec;
-			this.nro_grupo = nro_grupo;
 			this.costo = costo;
-		}
-		public Obra()
-		{
+			this.nro_grupo = nro_grupo;
 		}
 		/*Propiedades*/
 		public string Nombre
@@ -70,20 +67,20 @@ namespace Integrador
 			set{estado = value;}
 			get{return estado;}
 		}
-		public int Nro_grupo
-		{
-			set{nro_grupo = value;}
-			get{return nro_grupo;}
-		}
 		public double Costo
 		{
 			set{costo = value;}
 			get{return costo;}
 		}
+		public int Nro_grupo
+		{
+			set{nro_grupo = value;}
+			get{return nro_grupo;}
+		}
 		/*Métodos*/
 		public void imprimirObra()
 		{
-				Console.WriteLine("Datos de la obra: \n" + "Nombre del Propietario {0}\n" + "DNI del propietario {1}\n" + "Tipo de obra: {2}\n" + "Costo: {3}\n" + "Codigo : {4}\n" + "Días que tarda en ejecutarse: {5}\n" + "Estado de avance de la obra: {6} %\n" + "Numero de grupo de obreros: {7}\n", nombre, dni, tipo_obra, costo, cod_obra, dias_ejec, estado, nro_grupo);
+				Console.WriteLine("- Datos de la obra -\n" + "\n" + "Nombre del Propietario {0}\n" + "DNI del propietario {1}\n" + "Código: {2}\n" + "Tipo de obra: {3}\n" + "Días que tarda en ejecutarse : {4}\n" + "Estado de avance de la obra: {5}%\n" + "Costo de la obra: {6} %\n" + "Numero de grupo de obreros: {7}", nombre, dni, cod_obra, tipo_obra, dias_ejec, estado, costo, nro_grupo);
 		}
 		
 	}

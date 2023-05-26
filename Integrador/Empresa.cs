@@ -11,7 +11,7 @@ namespace Integrador
 		private string direccion;
 		private ArrayList listaObras;
 		private ArrayList listaGrupos;
-//		private ArrayList listaEmpresas;
+		private ArrayList listaObreros;
 		/*Constructor*/
 		public Empresa(string nombre, string mail, string direccion)
 		{
@@ -20,6 +20,7 @@ namespace Integrador
 			this.direccion = direccion;
 			listaObras  = new ArrayList();
 			listaGrupos  = new ArrayList();
+			listaObreros = new ArrayList();
 		}
 		/*Propiedades*/
 		public string Nombre
@@ -45,14 +46,22 @@ namespace Integrador
 		{
 			get{return listaGrupos;}
 		}
+		public ArrayList ListaObreros
+		{
+			get{return listaObreros;}
+		}
 		/*Métodos*/
-		public void agregarObraEMP(Obra ob1)
+		public void agregarObra(Obra ob1)
 		{
 			listaObras.Add(ob1);
 		}
 		public void agregarGrupo(Grupo g1)
 		{
 			listaGrupos.Add(g1);
+		}
+		public void agregarObrero(Obrero ob1)
+		{
+			listaObreros.Add(ob1);
 		}
 		public void eliminarObra(int ob1)
 		{
@@ -62,6 +71,10 @@ namespace Integrador
 		{
 			listaGrupos.Remove(g1);
 		}
+		public void eliminarObrero(int ob1)
+		{
+			listaObreros.Remove(ob1);
+		}
 		public int cantidadObra()
 		{ 
 			return listaObras.Count;
@@ -69,6 +82,10 @@ namespace Integrador
 		public int cantidadGrupo()
 		{ 
 			return listaGrupos.Count;
+		}
+		public int cantidadObrero()
+		{ 
+			return listaObreros.Count;
 		}
 		public bool existeObra(Obra ob1)
 		{
@@ -78,6 +95,10 @@ namespace Integrador
 		{
 			return listaGrupos.Contains(g1);
 		}
+		public bool existeObrero(Obrero ob1)
+		{
+			return listaObreros.Contains(ob1);
+		}
 		public Obra verObra(int i)
 		{ 
 			return (Obra)listaObras[i];
@@ -86,6 +107,10 @@ namespace Integrador
 		{ 
 			return (Grupo)listaGrupos[i];
 		}
+		public Obrero verObrero(int i)
+		{ 
+			return (Obrero)listaObreros[i];
+		}
 		public ArrayList todasObras()
 		{
 			return listaObras;
@@ -93,6 +118,10 @@ namespace Integrador
 		public ArrayList todosGrupos()
 		{
 			return listaGrupos;
+		}
+		public ArrayList todosObreros()
+		{
+			return listaObreros;
 		}
 	}
 }
