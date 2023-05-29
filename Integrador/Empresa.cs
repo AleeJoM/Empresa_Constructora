@@ -63,15 +63,15 @@ namespace Integrador
 		{
 			listaObreros.Add(ob1);
 		}
-		public void eliminarObra(int ob1)
+		public void eliminarObra(Obra ob1)
 		{
 			listaObras.Remove(ob1);
 		}
-		public void eliminarGrupo(int g1)
+		public void eliminarGrupo(Grupo g1)
 		{
 			listaGrupos.Remove(g1);
 		}
-		public void eliminarObrero(int ob1)
+		public void eliminarObrero(Obrero ob1)
 		{
 			listaObreros.Remove(ob1);
 		}

@@ -36,13 +36,13 @@ namespace Integrador
 			get{return listaObreros;}
 		}
 		/*Métodos*/
-		public void agregarObrero(Obrero obre1)
+		public void agregarObrero(Obrero ob1)
 		{
-			listaObreros.Add(obre1);
+			listaObreros.Add(ob1);
 		}
-		public void eliminarObrero(int obrero)
+		public void eliminarObrero(Obrero ob1)
 		{
-			listaObreros.Remove(obrero);
+			listaObreros.Remove(ob1);
 		}
 		public int cantidadObrero()
 		{ 

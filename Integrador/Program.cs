@@ -183,10 +183,9 @@ namespace Integrador
 					existe = true;
 					Console.WriteLine("Ingrese el código de obra para modificar su estado de avance: ");
 					int codigo = int.Parse(Console.ReadLine());
-					Console.WriteLine();
 					if(elem.Cod_obra == codigo)
 					{
-						Console.WriteLine("Modifique el estado en el que se encuentra la obra: ");
+						Console.WriteLine("\n Modifique el estado en el que se encuentra la obra: ");
 						int estado = int.Parse(Console.ReadLine());
 						elem.Estado = estado;
 						Console.WriteLine("\n- Estado de avance cambiado correctamente -\n");
@@ -264,7 +263,7 @@ namespace Integrador
 							}
 							else
 							{
-								Console.WriteLine("- Número de grupo erróneo o cantidad de obreros por grupo excedido -");
+								Console.WriteLine("\n- Número de grupo erróneo o cantidad de obreros por grupo excedido -");
 							}
 						}
 					}
@@ -296,23 +295,21 @@ namespace Integrador
 		}
 		public static void eliminarObrero(Empresa e1)
 		{
-			if(e1.cantidadObrero() > 0)
+			if (e1.cantidadObrero() > 0)
 			{
-				Console.WriteLine("- Ingrese legajo de obrero a eliminar - \n");
+				Console.WriteLine("- Ingrese legajo del obrero a eliminar - \n");
 				int legajo = int.Parse(Console.ReadLine());
-				foreach(Obrero elem in e1.ListaObreros)
+				for (int i = e1.cantidadObrero() - 1; i >= 0; i--)
 				{
-					foreach(Grupo elem1 in e1.ListaGrupos)
+					Obrero ob1 = (Obrero)e1.ListaObreros[i];
+					foreach (Grupo elem in e1.ListaGrupos)
 					{
-						if(elem.Legajo == legajo)
+						if (ob1.Legajo == legajo)
 						{
-							e1.eliminarObrero(legajo);
-							elem1.eliminarObrero(legajo);
+							e1.eliminarObrero(ob1);
+							elem.eliminarObrero(ob1);
 							Console.WriteLine("\n- Eliminado correctamente -");
-						}
-						else
-						{
-							Console.WriteLine("- Legajo incorrecto -");
+							break; // Salir del bucle foreach si se encontró y eliminó el obrero
 						}
 					}
 				}
@@ -322,6 +319,37 @@ namespace Integrador
 				Console.WriteLine("- No hay obreros existentes -");
 			}
 		}
+
+//		public static void eliminarObrero(Empresa e1)
+//		{
+//			Obrero ob1 = null;
+//			if(e1.cantidadObrero() > 0)
+//			{
+//				Console.WriteLine("- Ingrese legajo del obrero a eliminar - \n");
+//				int legajo = int.Parse(Console.ReadLine());
+//				foreach(Obrero elem in e1.ListaObreros)
+//				{
+//					foreach(Grupo elem1 in e1.ListaGrupos)
+//					{
+//						if(elem.Legajo == legajo)
+//						{
+//							ob1 = elem;
+//							e1.eliminarObrero(ob1);
+//							elem1.eliminarObrero(ob1);
+//							Console.WriteLine("\n- Eliminado correctamente -");
+//						}
+//						else
+//						{
+//							Console.WriteLine("\n- Legajo incorrecto -");
+//						}
+//					}
+//				}
+//			}
+//			else
+//			{
+//				Console.WriteLine("- No hay obreros existentes -");
+//			}
+//		}
 		public static void listaObrasFin(){
 			
 		}
