@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Empresa.cs" />
+    <Compile Include="Exception_Grupo.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="Obra.cs" />
     <Compile Include="Obrero.cs" />

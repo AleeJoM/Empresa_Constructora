@@ -80,7 +80,7 @@ namespace Integrador
 		/*Métodos*/
 		public void imprimirObra()
 		{
-				Console.WriteLine("- Datos de la obra -\n" + "\n" + "Nombre del Propietario {0}\n" + "DNI del propietario {1}\n" + "Código: {2}\n" + "Tipo de obra: {3}\n" + "Días que tarda en ejecutarse : {4}\n" + "Estado de avance de la obra: {5}%\n" + "Costo de la obra: {6} %\n" + "Numero de grupo de obreros: {7}", nombre, dni, cod_obra, tipo_obra, dias_ejec, estado, costo, nro_grupo);
+				Console.WriteLine("- Datos de la obra -\n" + "\n" + "Nombre del Propietario {0}\n" + "DNI del propietario {1}\n" + "Código: {2}\n" + "Tipo de obra: {3}\n" + "Días que tarda en ejecutarse : {4}\n" + "Estado de avance de la obra: {5}%\n" + "Costo de la obra: {6}$\n" + "Numero de grupo de obreros: {7}", nombre, dni, cod_obra, tipo_obra, dias_ejec, estado, costo, nro_grupo);
 		}
 		
 	}
