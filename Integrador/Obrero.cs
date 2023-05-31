@@ -59,7 +59,7 @@ namespace Integrador
 		/*Metodo*/
 		public void imprimirObrero()
 		{
-			Console.WriteLine("Nombre: {0}\n"+ "Apellido: {1}\n" + "DNI: {2}\n" + "Legajo: {3}\n" + "Cargo : {4}\n" + "Numero de grupo {5}\n", nombre, apellido, dni, legajo, cargo, nro_grupo);
+			Console.WriteLine("Nombre: {0}\n"+ "Apellido: {1}\n" + "DNI: {2}\n" + "Legajo: {3}\n" + "Cargo : {4}\n" + "Numero de grupo {5}", nombre, apellido, dni, legajo, cargo, nro_grupo);
 		}
 	}
 }

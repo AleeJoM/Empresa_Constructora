@@ -17,90 +17,77 @@ namespace Integrador
 				{
 					case 1 :
 						Console.Clear();
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("--------------------------------------------------------");
 						Console.WriteLine(" 1 - Agregar obra -");
-						Console.WriteLine("------------------------------------");
-						Console.WriteLine("");
+						Console.WriteLine("--------------------------------------------------------\n");
 						agregarObra(emp1);
-						Console.WriteLine("");
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("\n--------------------------------------------------------");
 						Console.WriteLine("Presione ENTER para volver a menú");
 						Console.ReadKey();
 						Console.Clear();
 						break;
 					case 2 :
 						Console.Clear();
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("--------------------------------------------------------");
 						Console.WriteLine(" 2 - Modificar estado de avance de la obra -");
-						Console.WriteLine("------------------------------------");
-						Console.WriteLine("");
+						Console.WriteLine("--------------------------------------------------------\n");
 						modificarEstado(emp1);
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("\n--------------------------------------------------------");
 						Console.WriteLine("Presione ENTER para volver a menú");
 						Console.ReadKey();
 						Console.Clear();
 						break;
 					case 3 :
 						Console.Clear();
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("--------------------------------------------------------");
 						Console.WriteLine(" 3 - Listado de obras -");
-						Console.WriteLine("------------------------------------");
-						Console.WriteLine("");
+						Console.WriteLine("--------------------------------------------------------\n");
 						mostrarObra(emp1);
-						Console.WriteLine("");
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("\n--------------------------------------------------------");
 						Console.WriteLine("Presione ENTER para volver a menú");
 						Console.ReadKey();
 						Console.Clear();
 						break;
 					case 4 :
 						Console.Clear();
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("--------------------------------------------------------");
 						Console.WriteLine(" 4 - Contratar nuevo obrero -");
-						Console.WriteLine("------------------------------------");
-						Console.WriteLine("");
+						Console.WriteLine("--------------------------------------------------------\n");
 						contratarObrero(emp1);
-						Console.WriteLine("");
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("\n--------------------------------------------------------");
 						Console.WriteLine("Presione ENTER para volver a menú");
 						Console.ReadKey();
 						Console.Clear();
 						break;
 					case 5 :
 						Console.Clear();
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("--------------------------------------------------------");
 						Console.WriteLine(" 5 - Lista de obreros -");
-						Console.WriteLine("------------------------------------");
-						Console.WriteLine("");
-						listaObreros(emp1);
-						Console.WriteLine("");
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("--------------------------------------------------------\n");
+						mostrarObreros(emp1);
+						Console.WriteLine("\n--------------------------------------------------------");
 						Console.WriteLine("Presione ENTER para volver a menú");
 						Console.ReadKey();
 						Console.Clear();
 						break;
 					case 6 :
 						Console.Clear();
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("--------------------------------------------------------");
 						Console.WriteLine(" 6 - Eliminar obrero -");
-						Console.WriteLine("------------------------------------");
-						Console.WriteLine("");
+						Console.WriteLine("--------------------------------------------------------\n");
 						eliminarObrero(emp1);
-						Console.WriteLine("");
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("\n--------------------------------------------------------");
 						Console.WriteLine("Presione ENTER para volver a menú");
 						Console.ReadKey();
 						Console.Clear();
 						break;
 					case 7 :
 						Console.Clear();
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("--------------------------------------------------------");
 						Console.WriteLine(" 7 - Lista de obras finalizadas -");
-						Console.WriteLine("------------------------------------");
-						Console.WriteLine("");
+						Console.WriteLine("--------------------------------------------------------\n");
 						listaObrasFin(emp1);
-						Console.WriteLine("");
-						Console.WriteLine("------------------------------------");
+						Console.WriteLine("\n--------------------------------------------------------");
 						Console.WriteLine("Presione ENTER para volver a menú");
 						Console.ReadKey();
 						Console.Clear();
@@ -118,10 +105,9 @@ namespace Integrador
 		}
 		public static void menu()
 		{
-			Console.WriteLine("------------------------------------");
+			Console.WriteLine("--------------------------------------------------------");
 			Console.WriteLine(" Menu ");
-			Console.WriteLine("------------------------------------");
-			Console.WriteLine("");
+			Console.WriteLine("--------------------------------------------------------\n");
 			Console.WriteLine(" 1 - Agregar nueva obra");
 			Console.WriteLine(" 2 - Modificar estado de avance de obra");
 			Console.WriteLine(" 3 - Listado de obras");
@@ -131,31 +117,31 @@ namespace Integrador
 			Console.WriteLine(" 7 - Lista de obras finalizadas");
 			Console.WriteLine("");
 			Console.WriteLine(" 0 - Salir");
-			Console.WriteLine("");
-			Console.WriteLine("------------------------------------");
-			Console.WriteLine("Ingrese una opcion: ");
+			Console.WriteLine("\n--------------------------------------------------------");
+			Console.WriteLine("Ingrese una opción: ");
 		}
 		public static void agregarObra(Empresa e1)
 		{
-			if(e1.cantidadObra() < 3)
+			if(e1.cantidadObra() < 2)
 			{
-				Console.WriteLine("Ingrese el nombre del propietario: ");
+				Console.WriteLine("Ingrese datos del propietario: \n");
+				Console.WriteLine("Nombre: ");
 				string nombrePropietario = Console.ReadLine();
-				Console.WriteLine("Ingrese DNI del propietario: ");
+				Console.WriteLine("DNI: ");
 				int dniPropietario = int.Parse(Console.ReadLine());
-				Console.WriteLine("Ingrese código de obra: ");
+				Console.WriteLine("Código de obra: ");
 				int codigodeobra = int.Parse(Console.ReadLine());
-				Console.WriteLine("Ingrese tipo de obra: ");
+				Console.WriteLine("Tipo de obra: ");
 				string tipodeobra = Console.ReadLine();
-				Console.WriteLine("Ingrese cantidad de días estimados de ejecución: ");
+				Console.WriteLine("Cantidad de días estimados de ejecución: ");
 				int diasdejecucion = int.Parse(Console.ReadLine());
-				Console.WriteLine("Ingrese costo de obra: ");
+				Console.WriteLine("Costo de obra: ");
 				double costo = double.Parse(Console.ReadLine());
 				try
 				{
-					if(e1.cantidadGrupo() < 1)
+					if(e1.cantidadGrupo() < 2)
 					{
-						Console.WriteLine("Asignar N° de grupo de obreros: ");
+						Console.WriteLine("Asigne el N° de grupo de obreros: ");
 						int nrodegrupo = int.Parse(Console.ReadLine());
 						Obra ob1 = new Obra(nombrePropietario, dniPropietario, codigodeobra, tipodeobra, diasdejecucion, costo, nrodegrupo);
 						e1.agregarObra(ob1);
@@ -181,7 +167,7 @@ namespace Integrador
 		public static void modificarEstado(Empresa e1)
 		{
 			bool existe = false;
-			foreach(Obra elem in e1.ListaObras)
+			foreach(Obra elem in e1.todasObras())
 			{
 				if(e1.existeObra(elem) != existe)
 				{
@@ -193,45 +179,45 @@ namespace Integrador
 						Console.WriteLine("\nModifique el estado en el que se encuentra la obra: ");
 						int estado = int.Parse(Console.ReadLine());
 						elem.Estado = estado;
-						Console.WriteLine("\n- Estado de avance cambiado correctamente -\n");
+						Console.WriteLine("\n- Estado de avance actualizado -");
 						
 					}
 					else
 					{
-						Console.WriteLine("\n- Código incorrecto -\n");
+						Console.WriteLine("\n- Código incorrecto -");
 					}
 				}
 			}
 			if(!existe)
 			{
-				Console.WriteLine("- Debe agregar una obra primero -\n");
+				Console.WriteLine("- No existen obras -");
 			}
 		}
 		public static void mostrarObra(Empresa e1)
 		{
 			bool existe = false;
-			foreach(Obra elem in e1.ListaObras)
+			foreach(Obra elem in e1.todasObras())
 			{
+				Console.WriteLine("- Ingrese el código de obra a buscar -");
+				int codigo = int.Parse(Console.ReadLine());
+				Console.WriteLine();
 				if(e1.existeObra(elem) != existe)
 				{
 					existe = true;
-					Console.WriteLine("- Ingrese el código de obra a buscar -");
-					int codigo = int.Parse(Console.ReadLine());
-					Console.WriteLine();
-					if(elem.Estado != 100)
+					if(elem.Cod_obra == codigo)
 					{
-						if(elem.Cod_obra == codigo)
+						if(elem.Estado != 100)
 						{
 							elem.imprimirObra();
 						}
 						else
 						{
-							Console.WriteLine("- Código de obra erróneo -");
+							Console.WriteLine("- La obra se encuentra finalizada -");
 						}
 					}
 					else
 					{
-						Console.WriteLine("- La obra se encuentra finalizada -");
+						Console.WriteLine("- Código de obra erróneo -");
 					}
 				}
 			}
@@ -243,27 +229,27 @@ namespace Integrador
 		public static void contratarObrero(Empresa e1)
 		{
 			bool existe = false;
-			foreach(Obra elem in e1.ListaObras)
+			foreach(Obra elem in e1.todasObras())
 			{
 				if(e1.existeObra(elem) != existe)
 				{
 					existe = true;
-					Console.WriteLine("Agregue los datos del obrero \n");
-					Console.WriteLine("Ingrese el nombre: ");
+					Console.WriteLine("Agregue los datos del obrero: \n");
+					Console.WriteLine("Nombre: ");
 					string nombreObrero = Console.ReadLine();
-					Console.WriteLine("Ingrese el apellido: ");
+					Console.WriteLine("Apellido: ");
 					string apellidoObrero = Console.ReadLine();
-					Console.WriteLine("Ingrese DNI: ");
+					Console.WriteLine("DNI: ");
 					int dni = int.Parse(Console.ReadLine());
-					Console.WriteLine("Ingrese legajo: ");
+					Console.WriteLine("Legajo: ");
 					int legajo = int.Parse(Console.ReadLine());
-					Console.WriteLine("Ingrese el cargo: ");
+					Console.WriteLine("Cargo: ");
 					string cargo = Console.ReadLine();
 					Console.WriteLine("Asigne un N° de grupo para el obrero: ");
 					int n_grupo = int.Parse(Console.ReadLine());
 					if(e1.cantidadGrupo() <= 1)
 					{
-						foreach(Grupo elem1 in e1.ListaGrupos)
+						foreach(Grupo elem1 in e1.todosGrupos())
 						{
 							if(n_grupo == elem1.Nro_grupo && elem1.cantidadObrero() <= 2)
 							{
@@ -278,10 +264,6 @@ namespace Integrador
 							}
 						}
 					}
-					else
-					{
-						Console.WriteLine("- Cantidad de grupos excedido -");
-					}
 				}
 			}
 			if(!existe)
@@ -289,7 +271,7 @@ namespace Integrador
 				Console.WriteLine("- Primero debe crear una obra -");
 			}
 		}
-		public static void listaObreros(Empresa e1)
+		public static void mostrarObreros(Empresa e1)
 		{
 			if(e1.cantidadObrero() > 0)
 			{
@@ -297,6 +279,7 @@ namespace Integrador
 				foreach(Obrero elem in e1.ListaObreros)
 				{
 					elem.imprimirObrero();
+					Console.WriteLine();
 				}
 			}
 			else
@@ -308,23 +291,28 @@ namespace Integrador
 		{
 			if (e1.cantidadObrero() > 0)
 			{
-				Console.WriteLine("- Ingrese legajo del obrero a eliminar - \n");
+				bool eliminado = false;
+				Console.WriteLine("- Ingrese legajo del obrero a eliminar -");
 				int legajo = int.Parse(Console.ReadLine());
-				for (int i = e1.cantidadObrero() - 1; i >= 0; i--)
+				foreach(Obrero elem in e1.ListaObreros)
 				{
-					Obrero ob1 = (Obrero)e1.ListaObreros[i];
-					foreach (Grupo elem in e1.ListaGrupos)
+					foreach(Grupo elem1 in e1.ListaGrupos)
 					{
-						if (ob1.Legajo == legajo)
+						if(elem.Legajo == legajo)
 						{
-							e1.eliminarObrero(ob1);
-							elem.eliminarObrero(ob1);
+							eliminado = true;
+							e1.eliminarObrero(elem);
+							elem1.eliminarObrero(elem);
 							Console.WriteLine("\n- Eliminado correctamente -");
 						}
 						else
 						{
 							Console.WriteLine("\n- Legajo incorrecto -");
 						}
+					}
+					if(eliminado)
+					{
+						break;
 					}
 				}
 			}
